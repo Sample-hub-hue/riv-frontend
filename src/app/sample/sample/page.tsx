@@ -1,5 +1,4 @@
 "use client"
-
 import React, { useState } from 'react';
 import Ring from "../../components/backgorundRing";
 import Image from "next/image";
@@ -10,22 +9,24 @@ import UserDetails from '../../components/userdetail';  // Import the UserDetail
 import CompanyDetails from '@/app/components/companydetails';
 
 export default function Signup() {
-  const [currentStep, setCurrentStep] = useState(0);  // Step 1: CompanyDetails, Step 2: UserDetails
 
-  const formSubmit = () => {
-    setCurrentStep(1);
-  }
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
+  const [isCompanyModalOpen, setIsCompanyModalOpen] = useState(false);
 
   const handleSignup = (e: React.FormEvent) => {
     e.preventDefault();
-    // Set to Step 2 after form submit
-    setCurrentStep(1);
+    setIsCompanyModalOpen(true); // Show the ProfileModal when the signup form is submitted
   };
 
-  // Handle the transition from CompanyDetails to UserDetails
-  const goToUserDetails = () => {
-    setCurrentStep(2);
+  const handleProfileComplete = () => {
+    setIsProfileModalOpen(false); // Close ProfileModal
+    // Further logic for after profile is complete...
   };
+
+  const handleCompanyComplete = () => {
+    setIsCompanyModalOpen(true);
+    setIsProfileModalOpen(false);
+  }
 
   return (
     <div>
@@ -60,7 +61,7 @@ export default function Signup() {
               </label>
             </div>
             <div className="flex">
-              <button type="submit" onClick={formSubmit} className="flex text-white text-xl text-bold w-[22vw] h-[7vh] justify-center items-center gap-[6.667px] flex-shrink-0 rounded-[71.667px] bg-[#040924] shadow-[0px_6.667px_18.333px_rgba(74,58,255,0.26)]">Signup</button>
+              <button type="submit" className="flex text-white text-xl text-bold w-[22vw] h-[7vh] justify-center items-center gap-[6.667px] flex-shrink-0 rounded-[71.667px] bg-[#040924] shadow-[0px_6.667px_18.333px_rgba(74,58,255,0.26)]">Signup</button>
             </div>
             <div className="flex items-center justify-between gap-[2vw]">
               <hr className="border-none bg-[#EFF0F6] my-[20px] w-[150px] h-[0.833px]" />
@@ -79,20 +80,21 @@ export default function Signup() {
         </div>
       </div>
 
-      {/* Conditional rendering for the modals */}
-      {currentStep === 1 && (
+      {/* Conditional rendering for the UserDetails modal */}
+      {isProfileModalOpen && (
         <>
-          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30 z-40" />
-          <CompanyDetails onComplete={goToUserDetails} />
+          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30 z-40" /> {/* Background opacity */}
+          <CompanyDetails />
         </>
       )}
 
-      {currentStep === 2 && (
+      {isCompanyModalOpen && (
         <>
-          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30 z-40" />
-          <UserDetails />
+          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30 z-40" /> {/* Background opacity */}
+          <CompanyDetails />
         </>
       )}
+
     </div>
   );
 }

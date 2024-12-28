@@ -8,8 +8,8 @@ export default function UserDetails() {
       <div className="p-6 bg-white rounded-lg shadow-lg max-w-[400px] w-full text-center">
         <div className="absolute w-[550px] h-fit left-[calc(50%-275px+1px)] top-[calc(50%-416.065px+44.57px)] bg-white shadow-[5.03598px_5.03598px_16.259px_rgba(0,0,0,0.25)] rounded-[20.4264px]">
           <div className="flex flex-col justify-center items-center h-full p-4">
-            <div className="text-center text-2xl mb-6">
-              Help us understand you better
+            <div className="text-center font-bold text-2xl mb-6">
+              CHOOSE YOUR COMPETITORS
             </div>
             <form>
               <div className="pb-6 flex flex-col gap-[1vh] w-full">
