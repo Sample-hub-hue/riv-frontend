@@ -11,19 +11,31 @@ export default function Ring() {
         </span>
       </div>
 
-      <div className="absolute right-[-10%] top-9 w-[55%] h-[110%] overflow-hidden"> {/* Adjusted position to allow part of the ring to go out of view */}
-        <div className="top-0 left-0 w-[100%] h-[100%] border-4 border-[#1C4F82] rounded-full flex justify-center items-center">
-          <div className="absolute w-[77%] h-[77%] border-4 border-[#888] rounded-full flex flex-col justify-center items-center">
-            {/* Change flex from row to column */}
+      <div className="absolute right-[-10%] top-9 w-[1056px] h-[1056px] overflow-hidden">
+        <div className="top-0 left-0 w-[1056px] h-[1056px] border-4 border-[#1C4F82] rounded-full flex justify-center items-center">
+          <div className="absolute w-[813.12px] h-[813.12px] border-4 border-[#888] rounded-full flex flex-col justify-center items-center">
           </div>
         </div>
       </div>
-      <div className="absolute flex-row right-0 w-[55%] pl-20 min-h-screen">
-        <div className="w-fit pr-10 pb-1 rounded-s pt-1 text-2xl border-2 shadow-black shadow-2xl border-gray-100 mb-2">
-          This is an insight from Times Now and HBO Max
+
+      <div className="hidden md:block">
+        <div className="absolute bottom-[74%] right-20 bg-white p-6 rounded-xl shadow-lg max-w-sm transform hover:-translate-y-1 transition-transform duration-200">
+          <p className="text-lg font-medium">
+            Airtable and Notion are two highly rated project
+          </p>
+          <p className="text-sm text-gray-500 mt-2">-India Today</p>
         </div>
-        <div className="w-fit flex pr-10 pb-1 bg-blue-800 text-white rounded-s pt-1 text-xl shadow-black shadow-2xl rounded-lg border-gray-100">
-          This is a very important insight from Times Now and HBO Max, it says that the new counsel of avengers are going to disband their initiative of world peace
+        <div className="absolute bottom-[44%] right-40 bg-[#040924] text-white p-6 rounded-xl shadow-lg max-w-sm transform hover:-translate-y-1 transition-transform duration-200">
+          <p className="text-lg font-medium">
+            Moon Pay now offers Tether (ERC -20) swaps with no processing fee and has earned an ISO 27001 Certification.
+          </p>
+          <p className="text-sm text-yellow-400 mt-2">- The Hindu</p>
+        </div>
+        <div className="absolute bottom-[16%] right-36 bg-white p-6 rounded-xl shadow-lg max-w-sm transform hover:-translate-y-1 transition-transform duration-200">
+          <p className="text-lg font-medium">
+            Airtable and Notion are two highly rated project management software solutions.
+          </p>
+          <p className="text-sm text-gray-500 mt-2">-India Today</p>
         </div>
       </div>
     </div>

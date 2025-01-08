@@ -58,7 +58,7 @@ export default function Home() {
 
               <div className="text-black flex justify-between items-center w-[10vw] mt-[20px]">
                 <p className="font-sans text-[11.743px] font-normal">New to Platform?</p>
-                <Link href="/auth/signup">
+                <Link href="/signup">
                   <p className="text-[#002094] underline">Sign Up</p>
                 </Link>
               </div>
